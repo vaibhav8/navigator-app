@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-export default class LoginScreen extends Component {
+class LoginScreen extends Component {
     render() {
         return (
             <View>
@@ -11,3 +12,31 @@ export default class LoginScreen extends Component {
         )
     }
 }
+
+class LoginUserName extends Component {
+    render() {
+        return (
+            <View>
+                <Text>This is Login User Name</Text>
+            </View>
+        )
+    }
+}
+
+class LoginPassword extends Component {
+    render() {
+        return(
+            <View>
+                <Text>This is Login Password</Text>
+            </View>
+        )
+    }
+}
+
+const TabNavigatorScreen = TabNavigator({
+    LoginSScreen: {screen: LoginScreen},
+    LoginUserName: {screen: LoginUserName},
+    LoginPassword: {screen: LoginPassword}
+})
+
+export default TabNavigatorScreen;
